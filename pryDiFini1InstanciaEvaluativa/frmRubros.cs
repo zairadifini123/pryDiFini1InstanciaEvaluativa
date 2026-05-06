@@ -23,7 +23,17 @@ namespace pryDiFini1InstanciaEvaluativa
         private void frmRubros_Load(object sender, EventArgs e)
         {
             //Llama el método de la clase para guardar el nombre de los rubros en el combo box
-            Rubros.GuardarDatos(cmbRubros);  
+            Rubros.GuardarDatos(cmbRubros);
+
+            //Calcular el producto de ValorStock
+            Decimal ValorStock;
+            ValorStock = Convert.ToDecimal(Costo) * Convert.ToDecimal(Stock);
+        }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            //Llama al metodo para mostrar los datos
+            Rubros.CargarDatosGrilla(dgvArticulos, cmbRubros.Text); 
         }
     }
 }

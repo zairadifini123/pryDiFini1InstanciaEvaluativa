@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRubros));
             label1 = new Label();
             cmbRubros = new ComboBox();
-            dgbRubros = new DataGridView();
+            dgvArticulos = new DataGridView();
             Codigo = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
             Costo = new DataGridViewTextBoxColumn();
@@ -45,7 +45,7 @@
             btnExportar = new Button();
             lnkInformacion = new LinkLabel();
             btnSalir = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgbRubros).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvArticulos).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -66,18 +66,18 @@
             cmbRubros.Size = new Size(151, 28);
             cmbRubros.TabIndex = 1;
             // 
-            // dgbRubros
+            // dgvArticulos
             // 
-            dgbRubros.AllowUserToAddRows = false;
-            dgbRubros.AllowUserToDeleteRows = false;
-            dgbRubros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgbRubros.Columns.AddRange(new DataGridViewColumn[] { Codigo, Descripcion, Costo, Stock, ValorStock });
-            dgbRubros.Location = new Point(12, 90);
-            dgbRubros.Name = "dgbRubros";
-            dgbRubros.ReadOnly = true;
-            dgbRubros.RowHeadersWidth = 51;
-            dgbRubros.Size = new Size(677, 214);
-            dgbRubros.TabIndex = 2;
+            dgvArticulos.AllowUserToAddRows = false;
+            dgvArticulos.AllowUserToDeleteRows = false;
+            dgvArticulos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvArticulos.Columns.AddRange(new DataGridViewColumn[] { Codigo, Descripcion, Costo, Stock, ValorStock });
+            dgvArticulos.Location = new Point(12, 90);
+            dgvArticulos.Name = "dgvArticulos";
+            dgvArticulos.ReadOnly = true;
+            dgvArticulos.RowHeadersWidth = 51;
+            dgvArticulos.Size = new Size(677, 214);
+            dgvArticulos.TabIndex = 2;
             // 
             // Codigo
             // 
@@ -163,6 +163,7 @@
             btnMostrar.TabIndex = 7;
             btnMostrar.Text = "Mostrar";
             btnMostrar.UseVisualStyleBackColor = true;
+            btnMostrar.Click += btnMostrar_Click;
             // 
             // btnExportar
             // 
@@ -207,16 +208,15 @@
             Controls.Add(label3);
             Controls.Add(lblCantidadArticulosListados);
             Controls.Add(label2);
-            Controls.Add(dgbRubros);
+            Controls.Add(dgvArticulos);
             Controls.Add(cmbRubros);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmRubros";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Rubros ";
-            WindowState = FormWindowState.Maximized;
             Load += frmRubros_Load;
-            ((System.ComponentModel.ISupportInitialize)dgbRubros).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvArticulos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -225,7 +225,7 @@
 
         private Label label1;
         private ComboBox cmbRubros;
-        private DataGridView dgbRubros;
+        private DataGridView dgvArticulos;
         private DataGridViewTextBoxColumn Codigo;
         private DataGridViewTextBoxColumn Descripcion;
         private DataGridViewTextBoxColumn Costo;
